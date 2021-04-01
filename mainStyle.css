@@ -1,0 +1,304 @@
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.HistogramLeft::-webkit-scrollbar {
+	display: none;
+}
+
+.top::-webkit-scrollbar {
+	display: none;
+}
+
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--Sniglet-font: "Sniglet", cursive;
+	--Rubik: "Rubik", cursive;
+	--Patua: "Patua One", cursive;
+	--Lobster: "lobster", cursive;
+	--light-black: #2e2c2caf;
+	--bggradient: linear-gradient(to bottom, #44a08d, #093637);
+	--bggradient_gray: linear-gradient(to bottom, #585858 60%, #8a8a8a);
+	--light-gray: rgba(255, 255, 255, 0.877);
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	font-size: 1.6rem;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.grid-container {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 17vw 83vw;
+	grid-template-rows: 35vh 100vh 100vh;
+	grid-template-areas:
+		'nav header'
+		'nav section1'
+		'nav section2'
+	;
+}
+
+.nav {
+	position: fixed;
+	height: 100%;
+	width: 17vw;
+	grid-area: nav;
+	font-family: "Rubik", sans-serif;
+	font-weight: bold;
+	color: white;
+	background: var(--bggradient_gray);
+	z-index: 100;
+}
+
+header {
+	grid-area: header;
+	background: var(--bggradient);
+	font-family: "Rubik", sans-serif;
+	color: white !important;
+	font-size: 8.5vmin;
+	font-weight: bold;
+	padding: 0.1em 0em;
+}
+
+.section1 {
+	grid-area: section1;
+	background-image: url(https://img02.en25.com/Web/UniversityofWindsor/{691c2904-e26b-42b0-a98e-0a81d4335148}_uwindsor-crest-angled-gray-15.png);
+	background-attachment: fixed;
+	background-size: 600px;
+	background-position: center right;
+	background-position-x: right;
+	background-position-y: center;
+	background-repeat: no-repeat;
+	background-color: #efeded;
+}
+
+
+.section2 {
+	grid-area: section2;
+	background: var(--bggradient);
+	overflow-y: scroll;
+}
+
+.banner {
+	height: 90px;
+	align-items: flex-start;
+	background-color: #403e3e;
+	opacity: 0.5;
+}
+
+ul {
+	margin-top: 1em;
+	padding: 0;
+	list-style: none;
+	font-size: 5vmin;
+	display: flex;
+	flex-direction: column;
+}
+
+li {
+	cursor: pointer;
+	margin-top: 0.2em;
+	padding: 0.4em;
+	transition: all 0.3s ease 0s;
+}
+
+li:hover {
+	background-color: white;
+	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+	color: rgb(34, 34, 34);
+	transform: translateY(-5px);
+}
+
+.row {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	text-align: center;
+}
+
+
+.col-1 {
+	flex: 1 1 50%;
+}
+
+.col-2 {
+	margin: 2vmin 0vmin 2vmin 0;
+	flex: 1 1 50%;
+}
+
+
+h3 {
+	margin-left: 3vmin;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+
+.Histogram {
+	display: flex;
+	position: relative;
+	padding: 15vmin 25vmin 15vmin 25vmin;
+	font-family: var(--Rubik);
+	font-size: 1.5em;
+	margin-left: -21rem;
+	width: 130%;
+	height: 100%;
+
+}
+
+.testCanvas {}
+
+.HistogramLeft {
+	flex: 1 1 20%;
+	overflow-y: scroll;
+}
+
+
+.HistogramRight {
+	flex: 1 1 80%;
+	overflow: scroll;
+}
+
+.top {
+	position: absolute;
+	z-index: 10;
+	background-color: #efeded;
+	overflow: scroll;
+	width: 83vw;
+	/* margin-top: 8rem; */
+}
+
+
+.period {
+	height: 10rem;
+}
+
+table,
+td,
+th {
+	border: 3px solid black;
+}
+
+table {
+	background-color: whitesmoke;
+	opacity: 0.5;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.infoTable {}
+
+.wrap {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	margin: 0 15px 0 15px;
+	width: 140px;
+	height: 45px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+}
+
+.button:hover {
+	background-color: #1f0310;
+	box-shadow: 0px 15px 20px #44a08d;
+	color: #fff;
+	transform: translateY(-7px);
+}
+
+.main_button {
+	margin: 0 15px 0 15px;
+	width: 140px;
+	height: 45px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+}
+
+.main_button:hover {
+	background-color: #000000;
+	box-shadow: 0px 15px 20px #040a09;
+	color: #fff;
+	transform: translateY(-2px);
+}
+
+
+.user_button {
+	margin: 0 15px 0 15px;
+	width: 140px;
+	height: 45px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+}
+
+.user_button:hover {
+	background-color: #000000;
+	box-shadow: 0px 15px 20px #040a09;
+	color: #fff;
+	transform: translateY(-2px);
+}

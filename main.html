@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Topic Tracking in Online Social Networks</title>
+        <link rel="stylesheet" type="text/css" href="mainStyle.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">         
+    </head>
+    <body> 
+        <div class="grid-container">
+            <div class="nav">
+                <ul>
+                    <li class="home_button">Home</li>
+                    <li class="histogram_button">Histogram</li>
+                    <li class="table_button">Table</li>
+                </ul>
+            </div>
+            <header class="row">
+                <p>Welcome to Twitter Spider</p>
+            </header>
+            <div class="section1">
+                <div class="banner">
+                    <div class="wrap"><button class="main_button" id="main_button" onclick="clickMain()">Show Main Info</button></div>
+                </div>
+                <div class="top" id="top"></div>
+                <div class="Histogram">
+                    <div class="HistogramLeft" id="left"></div>
+                    <div class="HistogramRight" id="right">
+                    </div>
+                </div>
+            </div>
+                
+
+            <div class="section2">
+                    <!-- <div class="period row">
+                            <div class="wrap"><button class="button" id="month" onclick="clickMonth()">Show Monthly Info</button></div>
+                            <div class="wrap"><button class="button" id="week" onclick="clickWeek()">Show Weekly Info</button></div>
+                            <div class="wrap"><button class="button" id="day" onclick="clickDay()">Show Daily Info</button></div>
+                            <div class="wrap"><button class="button" id="deleteInfo" onclick="clickDelete()">delete</button></div>
+                    </div>                 -->
+                    
+                    <div class="infoTable" id="infoTable"></div>
+            </div>
+                       
+        </div> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="mainJs.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> 
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.home_button').click(function(){
+                    $('html,body').animate({scrollTop:0}, 400);
+                });
+                $('.histogram_button').click(function(){
+                    $('html,body').animate({scrollTop:$('.section1').offset().top}, 400);
+                });
+                $('.table_button').click(function(){
+                    $('html,body').animate({scrollTop:$('.section2').offset().top}, 400);
+                });               
+            });
+        </script>
+    </body> 
+    
+</html>
